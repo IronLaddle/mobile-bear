@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { HomedtlPage } from '../homedtl/homedtl';
-import { DataProvider } from '../../providers/data/data';
+import { NavController, NavParams } from 'ionic-angular';
+
 
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: 'page-homedtl',
+  templateUrl: 'homedtl.html',
 })
-export class HomePage {
+export class HomedtlPage {
 
   toilets = [
     {
@@ -17,7 +16,10 @@ export class HomePage {
       tlLocation : 'KLIA Airport',
       tlPrice : 5,
       tlUsed : 75,
-      tlRating : 4.8
+      tlRating : 4.8,
+      tlDuration : 1,
+      //tlAmenities : {tlA : "wifi",tlA : "wifi",},
+      tlDesc : 'Toilet saya ini telah menjadi toilet kegemaran warga KL yang inginkan bersendiririan. Mereka boleh melayari internet secara percuma'
     },
     {
       tlId: 2,
@@ -39,21 +41,15 @@ export class HomePage {
     }
   ]
 
-  constructor(public navCtrl: NavController, public data: DataProvider) {
+  toiletID : number;
 
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+    this.toiletID = navParams.get('data');
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad home');
-    this.data.testData().subscribe(res => {
-      console.log(res)
-    })
+    console.log('ionViewDidLoad HomedtlPage');
   }
-
-  toiletDtl(tlDtl:number){
-    this.navCtrl.push(HomedtlPage, { data: tlDtl });
-  }
-
-  
 
 }

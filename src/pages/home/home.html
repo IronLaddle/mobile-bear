@@ -1,17 +1,31 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
+<ion-header no-border style="padding-top: 15px;">
+    <ion-searchbar placeholder="Search Toilet"></ion-searchbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content padding >
+
+  <ion-row *ngFor="let toilet of toilets">
+    <ion-card (click)="toiletDtl(toilet.tlId)">
+      <img src={{toilet.tlImage}} style="height: 25vh;"/>
+      <ion-card-content>
+        <div class="row" style="font-size: 11px;">
+          <div col-9>
+            <ion-icon ios="ios-pin" md="md-pin"></ion-icon> 
+            {{toilet.tlLocation}}
+          </div>
+          <div col-3>
+            <ion-icon color="danger" ios="ios-star" md="md-star"></ion-icon> 
+            {{toilet.tlRating}} <span style="color: grey;">({{toilet.tlUsed}})</span>
+          </div>
+        </div>
+        <div col-12>{{toilet.tlName}}</div>
+        <div col-12><b>RM {{toilet.tlPrice}} </b>/ night</div>
+      </ion-card-content>
+    </ion-card>
+  </ion-row>
+  
 </ion-content>
+
+<page-footer></page-footer>
+
+

@@ -10,6 +10,15 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { ProfilePage } from '../pages/profile/profile';
+import { BookingPage } from '../pages/booking/booking';
+import { HomedtlPage } from '../pages/homedtl/homedtl';
+import { LoginPage } from '../pages/login/login';
+import { WalletPage } from '../pages/wallet/wallet';
+import { AuthProvider } from '../providers/auth/auth';
+import { DataProvider } from '../providers/data/data';
+import { FooterPage } from '../pages/footer/footer';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,11 +26,18 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    ProfilePage,
+    BookingPage,
+    HomedtlPage,
+    LoginPage,
+    WalletPage,
+    FooterPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -29,12 +45,21 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    ProfilePage,
+    BookingPage,
+    HomedtlPage,
+    LoginPage,
+    WalletPage,
+    FooterPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AuthProvider,
+    DataProvider,
+    HttpClient
   ]
 })
 export class AppModule {}

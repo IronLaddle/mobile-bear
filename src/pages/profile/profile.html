@@ -1,0 +1,63 @@
+
+<ion-header>
+  <ion-navbar>
+    <!-- <ion-title>Profile</ion-title> -->
+    <ion-row padding>
+      <!-- <div col-4><ion-icon ios="ios-contact" md="md-contact"></ion-icon></div> -->
+      <div col-6>
+        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/0abaa395-c5bc-4c3c-b332-497a5e94d1fd/dd1ftdr-b55e63a8-9740-4f1e-9d33-c160057d1211.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvMGFiYWEzOTUtYzViYy00YzNjLWIzMzItNDk3YTVlOTRkMWZkXC9kZDFmdGRyLWI1NWU2M2E4LTk3NDAtNGYxZS05ZDMzLWMxNjAwNTdkMTIxMS5wbmcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.nKMSe7buspscV5aGotAMUhqmOm6nptmP17UyrVpiRn4"
+        style="width: 150px;height: 110px;"/>
+      </div>
+      <div col-6>
+        <ion-row >
+          <h3>Taka 1 Ok Rock</h3>
+        </ion-row>
+        <ion-row>
+          <h4>RM 50</h4>
+        </ion-row>
+        <ion-row>
+          <ion-icon color="danger" ios="ios-star" md="md-star"></ion-icon>
+          <ion-icon color="danger" ios="ios-star" md="md-star"></ion-icon>
+          <ion-icon color="danger" ios="ios-star" md="md-star"></ion-icon>
+          <ion-icon ios="ios-star" md="md-star"></ion-icon>
+          <ion-icon ios="ios-star" md="md-star"></ion-icon>
+        </ion-row>
+      </div>
+    </ion-row>
+  </ion-navbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <ion-list>
+    <ion-list-header>
+      ACCOUNT SETTINGS
+    </ion-list-header>
+    <ion-item>
+      <ion-label>Personal Information</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label (click)="topupWlt(1)">BeaRug Wallet Topup</ion-label>
+    </ion-item>
+
+    <ion-list-header>
+      HOSTING
+    </ion-list-header>
+    <ion-item>
+      <ion-label>List your toilet</ion-label><span pull-right>test</span>
+    </ion-item>
+    <ion-item>
+      <ion-label>Manage my toilet</ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Log out</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-row padding style="text-align: center;">
+    <ion-label style="color: grey;">VERSION 1.0 (Godam Sahor)</ion-label>
+  </ion-row>
+
+</ion-content>
+
+<page-footer></page-footer>
